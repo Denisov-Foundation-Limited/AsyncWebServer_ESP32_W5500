@@ -68,7 +68,7 @@ esp_eth_mac_t* w5500_begin(int MISO_GPIO, int MOSI_GPIO, int SCLK_GPIO, int CS_G
     .quadhd_io_num = -1,
   };
 
-  if ( ESP_OK != spi_bus_initialize( SPIHOST, &buscfg, 1 ))
+  if ( ESP_OK != spi_bus_initialize( SPIHOST, &buscfg, SPI_DMA_CH_AUTO ))
   {
     ESP_LOGE(TAG, "%s(%d): Error spi_bus_initialize", __FUNCTION__, __LINE__);
 
