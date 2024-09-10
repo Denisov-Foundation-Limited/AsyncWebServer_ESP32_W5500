@@ -45,7 +45,7 @@
 #include <AsyncTCP.h>
 #define WS_MAX_QUEUED_MESSAGES 32
 
-#include "AsyncWebServer_ESP32_W5500.h"
+#include "ESPAsyncWebServer.h"
 
 #include "AsyncWebSynchronization.h"
 

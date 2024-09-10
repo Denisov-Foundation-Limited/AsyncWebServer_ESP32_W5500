@@ -31,7 +31,7 @@
   1.6.4   K Hoang      23/12/2022 Remove unused variable to avoid compiler warning and error
  *****************************************************************************************************************************/
 
-#include "AsyncWebServer_ESP32_W5500.h"
+#include "ESPAsyncWebServer.h"
 
 //////////////////////////////////////////////////////////////
 
