@@ -34,7 +34,7 @@
 #ifndef ESP32_W5500_SPIFFSEditor_H_
 #define ESP32_W5500_SPIFFSEditor_H_
 
-#include "AsyncWebServer_ESP32_W5500.h"
+#include "ESPAsyncWebServer.h"
 
 /////////////////////////////////////////////////
 

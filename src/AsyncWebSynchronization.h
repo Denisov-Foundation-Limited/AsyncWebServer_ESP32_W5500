@@ -36,7 +36,7 @@
 
 // Synchronisation is only available on ESP32, as the ESP8266 isn't using FreeRTOS by default
 
-#include "AsyncWebServer_ESP32_W5500.h"
+#include "ESPAsyncWebServer.h"
 
 /////////////////////////////////////////////////
 
