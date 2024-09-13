@@ -36,21 +36,36 @@
 //////////////////////////////////////////////////////////////
 
 bool ESP32_W5500_eth_connected = false;
+String hostname = "";
 
 void ESP32_W5500_onEvent()
 {
   WiFi.onEvent(ESP32_W5500_event);
 }
 
-void ESP32_W5500_waitForConnect()
+bool ESP32_W5500_waitForConnect()
 {
-  while (!ESP32_W5500_eth_connected)
+  for (int i = 0; i < ESP32_W5500_CONN_RETRIES; i++) {
+    if (ESP32_W5500_eth_connected)
+      return true;
     delay(100);
+  }
+  return false;
 }
 
 bool ESP32_W5500_isConnected()
 {
   return ESP32_W5500_eth_connected;
+}
+
+void ESP32_W5500_set_hostname(const String &name)
+{
+  hostname = name;
+}
+
+const String &ESP32_W5500_get_hostname()
+{
+  return hostname;
 }
 
 void ESP32_W5500_event(WiFiEvent_t event)
@@ -66,7 +81,7 @@ void ESP32_W5500_event(WiFiEvent_t event)
     case ARDUINO_EVENT_ETH_START:
       AWS_LOG(F("\nETH Started"));
       //set eth hostname here
-      ETH.setHostname("ESP32_W5500");
+      ETH.setHostname(hostname.c_str());
       break;
 
     case ARDUINO_EVENT_ETH_CONNECTED:
