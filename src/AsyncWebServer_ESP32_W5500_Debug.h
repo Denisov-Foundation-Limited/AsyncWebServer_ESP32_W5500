@@ -63,8 +63,8 @@ const char AWS_LINE[]  = "========================================\n";
 #define AWS_PRINT_SP     AWS_PRINT(AWS_SPACE)
 #define AWS_PRINT_LINE   AWS_PRINT(AWS_LINE)
 
-#define AWS_PRINT        AWS_DEBUG_OUTPUT.print
-#define AWS_PRINTLN      AWS_DEBUG_OUTPUT.println
+#define AWS_PRINT        
+#define AWS_PRINTLN      
 
 ///////////////////////////////////////
 

@@ -71,6 +71,8 @@
 
 #define ASYNC_WEBSERVER_ESP32_W5500_VERSION_INT       1006004
 
+#define ESP32_W5500_CONN_RETRIES  50
+
 /////////////////////////////////////////////////
 
 #ifndef ESP32_W5500_AWS_UNUSED
@@ -146,11 +148,15 @@ extern bool ESP32_W5500_eth_connected;
 
 extern void ESP32_W5500_onEvent();
 
-extern void ESP32_W5500_waitForConnect();
+extern bool ESP32_W5500_waitForConnect();
 
 extern bool ESP32_W5500_isConnected();
 
 extern void ESP32_W5500_event(WiFiEvent_t event);
+
+extern void ESP32_W5500_set_hostname(const String &name);
+
+extern const String &ESP32_W5500_get_hostname();
 
 //////////////////////////////////////////////////////////////
 
